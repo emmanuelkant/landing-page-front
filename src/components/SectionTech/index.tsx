@@ -5,16 +5,22 @@ import Container from 'components/Container'
 
 import icons from './content'
 import * as S from './styles'
+import { TechSectionProps } from 'types/api'
+import { getImageUrl } from 'utils/getImageUrl'
 
-const SectionTech = () => (
+const SectionTech = ({ techIcons, title }: TechSectionProps) => (
   <S.Wrapper>
     <Container>
-      <Heading reverseColor>Tecnologias utilizadas</Heading>
+      <Heading reverseColor>{title}</Heading>
       <S.IconsContainer>
-        {icons.map(({ name, image }) => (
-          <S.Icon key={name}>
-            <S.Icons src={`img/tech/${image}`} alt={name} loading="lazy" />
-            <S.IconsName>{name}</S.IconsName>
+        {techIcons.map(({ id, title, icon }) => (
+          <S.Icon key={id}>
+            <S.Icons
+              src={getImageUrl(icon.url)}
+              alt={icon.alternativeText}
+              loading="lazy"
+            />
+            <S.IconsName>{title}</S.IconsName>
           </S.Icon>
         ))}
       </S.IconsContainer>
