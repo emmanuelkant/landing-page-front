@@ -8,6 +8,31 @@ type buttonProps = {
   url: string
 }
 
+export type FAQSectionProps = {
+  title: string
+  questions: [
+    {
+      question: string
+      answer: string
+    }
+  ]
+}
+
+export type ReviewProps = {
+  id: string
+  name: string
+  text: string
+  photo: {
+    url: string
+    alternativeText: string
+  }
+}
+
+export type ReviewsSectionProps = {
+  title: string
+  reviews: [ReviewProps]
+}
+
 export type AuthorProps = {
   id?: string
   photo: imageProps
@@ -99,4 +124,6 @@ export type LandingPageProps = {
   agendaSection: AgendaSectionProps
   pricingBox: PricingBoxProps
   aboutUsSection: AboutUsSectionProps
+  reviewsSection: ReviewsSectionProps
+  faqSection: FAQSectionProps
 }

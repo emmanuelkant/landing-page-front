@@ -4,6 +4,31 @@ const getLandingPage = /* GraphQL */ `
     url
   }
 
+  fragment faqSection on LandingPage {
+    faqSection: sectionFaq {
+      title
+      questions {
+        question
+        answer
+      }
+    }
+  }
+
+  fragment reviewsSection on LandingPage {
+    reviewsSection: sectionReviews {
+      title
+      reviews {
+        id
+        name
+        text
+        photo {
+          url
+          alternativeText
+        }
+      }
+    }
+  }
+
   fragment aboutUsSection on LandingPage {
     aboutUsSection: sectionAboutUs {
       title
@@ -120,6 +145,8 @@ const getLandingPage = /* GraphQL */ `
       ...agendaSection
       ...pricingBox
       ...aboutUsSection
+      ...reviewsSection
+      ...faqSection
     }
   }
 `
