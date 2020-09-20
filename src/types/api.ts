@@ -3,6 +3,33 @@ type imageProps = {
   url?: string
 }
 
+export type AgendaSectionProps = {
+  title: string
+  description: string
+}
+
+export type ModulesSectionProps = {
+  title: string
+  modules: [
+    {
+      id: string
+      title: string
+      subtitle: string
+      description: string
+    }
+  ]
+}
+
+export type ConceptsSectionProps = {
+  title: string
+  concepts: [
+    {
+      id: string
+      title: string
+    }
+  ]
+}
+
 export type TechSectionProps = {
   title: string
   techIcons: [
@@ -37,4 +64,7 @@ export type LandingPageProps = {
   header: HeaderProps
   aboutSection: AboutSectionProps
   techSection: TechSectionProps
+  conceptsSection: ConceptsSectionProps
+  modulesSection: ModulesSectionProps
+  agendaSection: AgendaSectionProps
 }

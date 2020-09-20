@@ -4,6 +4,34 @@ const getLandingPage = /* GraphQL */ `
     url
   }
 
+  fragment agendaSection on LandingPage {
+    agendaSection: sectionAgenda {
+      title
+      description
+    }
+  }
+
+  fragment modulesSection on LandingPage {
+    modulesSection: sectionModules {
+      title
+      modules {
+        title
+        subtitle
+        description
+      }
+    }
+  }
+
+  fragment conceptsSection on LandingPage {
+    conceptsSection: sectionConcepts {
+      title
+      concepts {
+        id
+        title
+      }
+    }
+  }
+
   fragment techSection on LandingPage {
     techSection: sectionTech {
       id
@@ -53,6 +81,9 @@ const getLandingPage = /* GraphQL */ `
       ...header
       ...aboutSection
       ...techSection
+      ...conceptsSection
+      ...modulesSection
+      ...agendaSection
     }
   }
 `
