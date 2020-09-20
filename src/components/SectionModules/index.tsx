@@ -13,7 +13,7 @@ const SectionModules = ({ title, modules }: ModulesSectionProps) => (
 
     <S.Content>
       {modules.map(({ id, title, subtitle, description }) => (
-        <CardModule key={id} title={title} subTitle={subtitle}>
+        <CardModule key={`${id}-${title}`} title={title} subTitle={subtitle}>
           <div dangerouslySetInnerHTML={{ __html: description }} />
         </CardModule>
       ))}

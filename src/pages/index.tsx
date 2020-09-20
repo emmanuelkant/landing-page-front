@@ -21,21 +21,23 @@ import { LandingPageProps } from 'types/api'
 const Index = ({
   logo,
   header,
-  aboutSection,
+  aboutProjectSection,
   techSection,
   conceptsSection,
   modulesSection,
-  agendaSection
+  agendaSection,
+  pricingBox,
+  aboutUsSection
 }: LandingPageProps) => (
   <>
     <SectionHero logo={logo} header={header} />
-    <SectionAboutProject {...aboutSection} />
+    <SectionAboutProject {...aboutProjectSection} />
     <SectionTech {...techSection} />
     <SectionConcepts {...conceptsSection} />
     <SectionModules {...modulesSection} />
     <SectionAgenda {...agendaSection} />
-    <PricingBox />
-    <SectionAboutUs />
+    <PricingBox {...pricingBox} />
+    <SectionAboutUs {...aboutUsSection} />
     <SectionReviews />
     <SectionFaq />
     <Footer />

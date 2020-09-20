@@ -4,6 +4,40 @@ const getLandingPage = /* GraphQL */ `
     url
   }
 
+  fragment aboutUsSection on LandingPage {
+    aboutUsSection: sectionAboutUs {
+      title
+      authors {
+        id
+        photo {
+          alternativeText
+          url
+        }
+        name
+        role
+        socialLinks {
+          id
+          url
+          title
+        }
+        description
+      }
+    }
+  }
+
+  fragment pricingBox on LandingPage {
+    pricingBox {
+      totalPrice
+      numberInstallments
+      priceInstallment
+      button {
+        label
+        url
+      }
+      benefits
+    }
+  }
+
   fragment agendaSection on LandingPage {
     agendaSection: sectionAgenda {
       title
@@ -45,8 +79,8 @@ const getLandingPage = /* GraphQL */ `
     }
   }
 
-  fragment aboutSection on LandingPage {
-    aboutSection: sectionAboutProject {
+  fragment aboutProjectSection on LandingPage {
+    aboutProjectSection: sectionAboutProject {
       title
       description
       image {
@@ -79,11 +113,13 @@ const getLandingPage = /* GraphQL */ `
     landingPage {
       ...logo
       ...header
-      ...aboutSection
+      ...aboutProjectSection
       ...techSection
       ...conceptsSection
       ...modulesSection
       ...agendaSection
+      ...pricingBox
+      ...aboutUsSection
     }
   }
 `
