@@ -1,13 +1,11 @@
-# Simple NextJS Quick Start
+# This is a project that I made when I was learning Next.JS.
 
-A simple project starter to work with React, NextJS and Styled Components
-
-You can see the example in [https://nextjs-quickstart.now.sh/](https://nextjs-quickstart.now.sh/)
+I made together the tutor follow your tips.
 
 ### 📦 Install
 
 ```
-$ git clone https://github.com/guilouro/simple-nextjs-quick-start.git
+$ git clone https://github.com/emmanuelkant/landing-page-front.git
 
 $ yarn install
 ```
